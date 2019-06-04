@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Correlation Between product price and its carbon footprint</title>
+
+  <!-- Custom fonts for this theme -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Theme CSS -->
+  <link href="css/freelancer.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top"></body>
+
+ 
+  <!-- Calculator Section -->
+  <section class="page-section portfolio" id="calculator">
+    <div class="container">
+
+      <!-- Calculator Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Quizz answers</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+      
+      <br>
+          <!-- Quizz 1 -->
+      <div class="form-group">
+          <div class="btn-group btn-group-toggle col-sm-10 offset-sm-1" data-toggle="buttons">
+              <label class="btn btn-outline-primary  btn-lg col-sm-5">
+                <input type="radio" name="quizz_1" id="plastic_carrier_bag"  value="plastic_carrier_bag"> Plastic carrier bag
+              </label>
+              <label class="btn btn-outline-primary disabled btn-lg col-sm-2" disabled>
+                <input type="checkbox" disabled>VS
+              </label>
+              <label class="btn btn-outline-primary btn-lg col-sm-5">
+                <input type="radio" name="quizz_1" id="paper_carrier_bag" value="paper_carrier_bag" > Paper carrier bag
+              </label>
+          </div>
+        </div>
+
+        <br>
+
+
+         <!-- Quizz 5-->
+      <div class="form-group">
+          <div class="btn-group btn-group-toggle col-sm-10 offset-sm-1" data-toggle="buttons">
+              <label class="btn btn-outline-primary  btn-lg col-sm-5">
+                <input type="radio" name="quizz_5" id="doing_dishes"  value="doing_dishes"> Doing the dishes
+              </label>
+              <label class="btn btn-outline-primary disabled btn-lg col-sm-2" disabled>
+                <input type="checkbox" class="col-sm-1"disabled>VS
+              </label>
+              <label class="btn btn-outline-primary btn-lg col-sm-5">
+                <input type="radio" name="quizz_5" id="bath" value="bath" > Taking a bath
+              </label>
+          </div>
+        </div>
+
+        <br>
+
+           <!-- Quizz 2 -->
+      <div class="form-group">
+          <div class="btn-group btn-group-toggle col-sm-10 offset-sm-1" data-toggle="buttons">
+              <label class="btn btn-outline-primary  btn-lg col-sm-5">
+                <input type="radio" name="quizz_2" id="1kg_of_plastic"  value="1kg_of_plastic"> 1KG of plastic
+              </label>
+              <label class="btn btn-outline-primary disabled btn-lg col-sm-2" disabled>
+                <input type="checkbox" disabled>VS
+              </label>
+              <label class="btn btn-outline-primary btn-lg col-sm-5">
+                <input type="radio" name="quizz_2" id="1KG_of_cheese" value="1KG_of_cheese" > 1KG of cheese
+              </label>
+          </div>
+        </div>
+        <br>
+
+          <!-- Quizz 3 -->
+      <div class="form-group">
+          <div class="btn-group btn-group-toggle col-sm-10 offset-sm-1" data-toggle="buttons">
+              <label class="btn btn-outline-primary  btn-lg col-sm-5">
+                <input type="radio" name="quizz_3" id="hamburger_restaurant"  value="hamburger_restaurant"> ordering a hamburger in a restaurant
+              </label>
+              <label class="btn btn-outline-primary disabled btn-lg col-sm-2" disabled>
+                <input type="checkbox" disabled>VS
+              </label>
+              <label class="btn btn-outline-primary btn-lg col-sm-5">
+                <input type="radio" name="quizz_3" id="1kg_trash" value="1kg_trash" > Producing 1KG of trash
+              </label>
+          </div>
+        </div>
+
+        <br>
+
+          <!-- Quizz 4 -->
+      <div class="form-group">
+          <div class="btn-group btn-group-toggle col-sm-10 offset-sm-1" data-toggle="buttons">
+              <label class="btn btn-outline-primary  btn-lg col-sm-5">
+                <input type="radio" name="quizz_4" id="1KG_tomatoes"  value="1KG_tomatoes"> 1KG of tomatoes
+              </label>
+              <label class="btn btn-outline-primary disabled btn-lg col-sm-2" disabled>
+                <input type="checkbox" class="col-sm-1"disabled>VS
+              </label>
+              <label class="btn btn-outline-primary btn-lg col-sm-5">
+                <input type="radio" name="quizz_4" id="1kg_boiled_potatoes" value="1kg_boiled_potatoes" > 1KG of boiled potatoes
+              </label>
+          </div>
+        </div>
+  </section>
+
+
+  
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/freelancer.min.js"></script>
+
+  <script>
+     function priceToCO2() {
+      var x = document.getElementById("priceinput").value;
+      if(x > 0){
+        var y = Number(0.093 + 0.138*x).toFixed(2);
+      }
+      else{
+        var y = 0;
+      }
+      document.getElementById("co2value").innerHTML = y + "kg";
+    }
+
+    var $firstButton = $(".first"),
+        $secondButton = $(".second"),
+        $input = $("input"),
+        $name = $(".name"),
+        $more = $(".more"),
+        $yourname = $(".yourname"),
+        $reset = $(".reset"),
+        $ctr = $(".container");
+
+        $firstButton.on("click", function(e){
+          $(this).text("Saving...").delay(900).queue(function(){
+            $ctr.addClass("center slider-two-active").removeClass("full slider-one-active");
+          });
+          e.preventDefault();
+        });
+
+        $secondButton.on("click", function(e){
+          $(this).text("Saving...").delay(900).queue(function(){
+            $ctr.addClass("full slider-three-active").removeClass("center slider-two-active slider-one-active");
+            $name = $name.val();
+            if($name == "") {
+              $yourname.html("Anonymous!");
+            }
+            else { $yourname.html($name+"!"); }
+          });
+          e.preventDefault();
+        });
+
+
+// copy
+  </script>
+
+</body>
+</html>
